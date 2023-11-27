@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { menuItems } from '../../utils/menuItems';
 import { signout } from '../../utils/icon';
 import avatar from '../../img/avatar.jpeg';
-function Navigation() {
+function Navigation({ active, setActive }) {
   return (
     <NavStyled>
       <div className='user-con'>
@@ -16,7 +16,13 @@ function Navigation() {
       <ul className='menu-items'>
         {menuItems.map((menu, index) => {
           return (
-            <li key={index}>
+            <li
+              key={index}
+              onClick={() => {
+                setActive(menu.id);
+              }}
+              className={active === menu.id ? 'active' : ''}
+            >
               {menu.icon}
               <span>{menu.title} </span>
             </li>
@@ -83,6 +89,22 @@ const NavStyled = styled.nav`
         font-size: 1.4rem;
         transition: all 0.4s ease-in-out;
       }
+    }
+  }
+  .active {
+    color: rgba(34, 34, 96, 1) !important;
+    i {
+      color: rgba(34, 34, 96, 1) !important;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background-color: #222260;
+      border-radius: 0 10px 10px 0;
     }
   }
 `;
