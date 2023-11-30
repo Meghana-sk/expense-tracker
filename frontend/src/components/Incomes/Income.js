@@ -6,7 +6,7 @@ import { useGlobalContext } from '../../context/globalContext';
 import IncomeItem from '../IncomeItem/IncomeItem';
 
 function Income() {
-  const { addIncome, incomes, getIncomes } = useGlobalContext();
+  const { addIncome, incomes, getIncomes, deleteIncome } = useGlobalContext();
 
   useEffect(() => {
     getIncomes();
@@ -25,6 +25,7 @@ function Income() {
                 {...income}
                 key={index}
                 indicatorColor={'var(--color-green)'}
+                deleteIncome={deleteIncome}
               />
             ))}
           </div>
