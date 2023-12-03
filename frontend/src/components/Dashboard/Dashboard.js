@@ -1,11 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { InnerLayout } from '../../styles/Layouts';
+import Chart from '../chart/Chart';
 
 function Dashboard() {
   return (
     <DashboardStyled>
-      <InnerLayout></InnerLayout>
+      <InnerLayout>
+        <h1> All transactions</h1>
+        <div className='stats-con'>
+          <div className='chart-con'>
+            <Chart />
+          </div>
+        </div>
+      </InnerLayout>
     </DashboardStyled>
   );
 }
