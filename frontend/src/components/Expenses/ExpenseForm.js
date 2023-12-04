@@ -14,8 +14,9 @@ function ExpenseForm() {
     date: '',
     category: '',
     description: '',
+    type: 'expense',
   });
-  const { title, amount, date, category, description } = inputState;
+  const { title, amount, date, category, description, type } = inputState;
   const handleInput = (name) => (e) => {
     setInputState({ ...inputState, [name]: e.target.value });
   };
@@ -98,7 +99,7 @@ function ExpenseForm() {
       </div>
       <div className='submit-btn'>
         <Button
-          name={'Add Income'}
+          name={'Add Expense'}
           icon={plus}
           bPad={'.8rem 1.6rem'}
           bRad={'30px'}

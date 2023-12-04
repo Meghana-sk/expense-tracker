@@ -36,11 +36,13 @@ function Chart() {
         label: 'Income',
         data: [...incomes.map(({ amount }) => amount)],
         backgroundColor: 'green',
+        tension: 0.2,
       },
       {
         label: 'Expenses',
         data: [...expenses.map(({ amount }) => amount)],
         backgroundColor: 'red',
+        tension: 0.2,
       },
     ],
   };
