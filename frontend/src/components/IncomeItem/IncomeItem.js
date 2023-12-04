@@ -25,7 +25,7 @@ import Button from '../Button/Button';
 import { dateFormat } from '../../utils/dateFormat';
 
 function IncomeItem({
-  _id: id,
+  id,
   title,
   amount,
   date,
@@ -109,7 +109,7 @@ function IncomeItem({
               iColor={'#fff'}
               hColor={'var(--color-green)'}
               onClick={() => deleteIncome(id)}
-            ></Button>
+            />
           </div>
         </div>
       </div>

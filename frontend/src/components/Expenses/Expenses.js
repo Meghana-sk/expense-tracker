@@ -6,33 +6,43 @@ import IncomeItem from '../IncomeItem/IncomeItem';
 import ExpenseForm from './ExpenseForm';
 
 function Expenses() {
-  const { addExpense, expenses, getExpenses, deleteExpense, totalExpense } =
+  const { expenses, getExpenses, deleteExpense, totalExpense } =
     useGlobalContext();
 
   useEffect(() => {
     getExpenses();
   }, []);
+
   return (
     <ExpenseStyled>
       <InnerLayout>
         <h1>Expenses</h1>
         <h2 className='total-income'>
-          Total income: <span>₹{totalExpense()}</span>{' '}
+          Total expense: <span>₹{totalExpense()}</span>{' '}
         </h2>
         <div className='income-content'>
           <div className='form-container'>
             <ExpenseForm />
           </div>
           <div className='incomes'>
-            {expenses?.map((income, index) => (
-              <IncomeItem
-                {...income}
-                key={index}
-                indicatorColor={'var(--color-green)'}
-                deleteIncome={deleteExpense}
-                type='expense'
-              />
-            ))}
+            {expenses?.map((income, index) => {
+              const { _id, title, amount, date, category, description, type } =
+                income;
+              return (
+                <IncomeItem
+                  key={_id}
+                  id={_id}
+                  title={title}
+                  description={description}
+                  amount={amount}
+                  date={date}
+                  type={'expense'}
+                  category={category}
+                  indicatorColor='var(--color-green)'
+                  deleteIncome={deleteExpense}
+                />
+              );
+            })}
           </div>
         </div>
       </InnerLayout>
