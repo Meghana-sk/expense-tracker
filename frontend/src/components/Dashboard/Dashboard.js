@@ -60,7 +60,7 @@ function Dashboard() {
               <p>{Math.max(...incomes.map((item) => item.amount))}</p>
             </div>
             <h2 className='salary-title'>
-              Min <span>Salary</span>
+              Min <span>Expenses</span>
               <span>Max</span>
             </h2>
             <div className='salary-item'>
