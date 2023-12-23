@@ -31,7 +31,7 @@ function Expenses() {
               return (
                 <IncomeItem
                   key={_id}
-                  id={_id}
+                  _id={_id}
                   title={title}
                   description={description}
                   amount={amount}
