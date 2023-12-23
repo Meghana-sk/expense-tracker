@@ -1,43 +1,41 @@
-# expense-tracker
+# Expense Tracker App
 
-## create two folders frontend and backend
+Track your expenses effortlessly with Expense Tracker app.
 
-## cd backend
+## Features
 
-`npm init`
+- **User-Friendly Interface**: Intuitive design for seamless navigation.
+- **Expense Management**: Add and delete your expenses with ease.
+- **Categories**: Categorize your expenses to get a detailed overview.
+## Tech Stack
 
-`npm install express mongoose cors nodemon`
+- **Frontend**: `React`
+- **Backend**: `Node.js, Express.js`
+- **Database**: `MongoDB`
 
-## create folders db, models, controllers, routes
+## Installation
 
-## create an entry point file which is index.js
+1. Clone the repository:
+2. Navigate to the project directory using `cd expense-tracker-app`
+3. Install dependencies for the frontend and backend:
+   
+   ```shell
+    cd frontend
+    npm install
+    cd ../backend
+    npm install
+    ```
 
-## npm i dotenv
+4.  Set up the MongoDB database:
+Create a .env file in the backend directory and add your MongoDB connection string and PORT number:
+`MONGODB_URL=your-mongodb-connection-string`
+5. Start the application:
 
-```
-// index.js
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
-const app = express();
-const PORT = process.env.PORT;
+    ```shell
+     cd ../frontend
+     npm start
+     cd ../backend
+     npm start
+    ```
 
-//middlewares
-app.use(express.json());
-app.use(cors());
-
-app.get('/', (req, res) => {
-  res.send('Hello world');
-});
-const server = () => {
-  //   console.log('listening to port', PORT);
-  app.listen(PORT, () => {
-    console.log('listening to port:', PORT);
-  });
-};
-
-server();
-
-```
-
-### open postman with http://localhost:5000 and when you send req, you receive Hello world
+6. Open your browser and visit http://localhost:3000 to use the Expense Tracker app.
