@@ -25,7 +25,7 @@ import Button from '../Button/Button';
 import { dateFormat } from '../../utils/dateFormat';
 
 function IncomeItem({
-  id,
+  id: _id,
   title,
   amount,
   date,
